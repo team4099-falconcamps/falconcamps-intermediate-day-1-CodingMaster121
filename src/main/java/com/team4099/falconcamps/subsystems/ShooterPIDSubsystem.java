@@ -21,13 +21,13 @@ public class ShooterPIDSubsystem extends PIDSubsystem {
     }
 
     @Override
-    protected void useOutput(double output, double setpoint) {
+    public void useOutput(double output, double setpoint) {
         // TODO Auto-generated method stub
         shooterLeader.set(output);
     }
 
     @Override
-    protected double getMeasurement() {
+    public double getMeasurement() {
         // TODO Auto-generated method stub
         return shooterEncoder.getVelocity();
     }
