@@ -9,7 +9,9 @@ public class ShooterSparkPID extends SubsystemBase {
     private final CANEncoder shooterEncoder = shooterLeader.getEncoder();
     private final CANPIDController pidController = shooterFollower.getPIDController();
 
-    public ShooterSparkPID() {}
+    public ShooterSparkPID() {
+        
+    }
 
     @Override
     public void periodic() {}
