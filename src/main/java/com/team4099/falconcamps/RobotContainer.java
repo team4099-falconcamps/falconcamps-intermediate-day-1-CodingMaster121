@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
     private ShooterPIDSubsystem shooterSubsystem = new ShooterPIDSubsystem();
+    private XboxController driverController = new XboxController(0);
     public RobotContainer() {
-        XboxController driverController = new XboxController(0);
         new Trigger(driverController::getAButton).whenActive(new ShooterPIDSubsystemCommand(shooterSubsystem));
         shooterSubsystem.setDefaultCommand(new ShooterPIDSubsystemIdleCommand(shooterSubsystem));
     }
