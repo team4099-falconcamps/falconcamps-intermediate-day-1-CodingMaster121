@@ -10,7 +10,7 @@ public class ShooterSparkPID extends SubsystemBase implements Loggable {
     private final CANSparkMax shooterFollower = new CANSparkMax(14, CANSparkMaxLowLevel.MotorType.kBrushless);
     @Log private final CANEncoder shooterEncoder = shooterLeader.getEncoder();
     @Log private final CANPIDController pidController = shooterFollower.getPIDController();
-    @Log private double targetVelocity = 0;
+    private double targetVelocity = 0;
 
     public ShooterSparkPID() {
         pidController.setP(1/134);
