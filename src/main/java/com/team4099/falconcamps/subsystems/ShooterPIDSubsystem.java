@@ -4,11 +4,13 @@ import com.revrobotics.*;
 
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.PIDSubsystem;
+import io.github.oblarg.oblog.Loggable;
+import io.github.oblarg.oblog.annotations.Log;
 
-public class ShooterPIDSubsystem extends PIDSubsystem {
+public class ShooterPIDSubsystem extends PIDSubsystem implements Loggable {
     private final CANSparkMax shooterLeader = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
     private final CANSparkMax shooterFollower = new CANSparkMax(14, CANSparkMaxLowLevel.MotorType.kBrushless);
-    private final CANEncoder shooterEncoder = shooterLeader.getEncoder();
+    @Log private final CANEncoder shooterEncoder = shooterLeader.getEncoder();
 
     public ShooterPIDSubsystem() {
         super(new PIDController(1/134, 0, 3 * 14903));

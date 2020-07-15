@@ -1,16 +1,11 @@
 package com.team4099.falconcamps;
 
-import com.team4099.falconcamps.subsystems.ShooterPIDSubsystem;
-import com.team4099.falconcamps.subsystems.ShooterSparkPID;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import io.github.oblarg.oblog.Logger;
-import io.github.oblarg.oblog.annotations.Log;
 
 public class Robot extends TimedRobot {
-    @Log private final RobotContainer robotContainer = new RobotContainer();
-    @Log private final ShooterSparkPID shooterSparkSubsystem = new ShooterSparkPID();
-    @Log private final ShooterPIDSubsystem shooterPIDSubsystem = new ShooterPIDSubsystem();
+    private final RobotContainer robotContainer = new RobotContainer();
 
     @Override public void robotInit() {
         Logger.configureLoggingAndConfig(this, false);
